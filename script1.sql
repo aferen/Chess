@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS deneme18;
 CREATE TABLE deneme18 (
    employee_id   NUMERIC      NOT NULL,
    first_name    VARCHAR(255) NOT NULL,
