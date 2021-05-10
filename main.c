@@ -1,6 +1,6 @@
 /******************************************************************************
 
-							Online C Compiler.
+							Online C Compiler. 
 				Code, Compile, Run and Debug C program online.
 Write your code in this editor and press "Run" button to compile and execute it.
 
@@ -29,7 +29,7 @@ int main()
 	char **arr;
 	int  i = 0, turn = 0, gameOver = 0;
 
-	//hafýzadan alan al
+	//hafÃ½zadan alan al
 	arr = malloc(sizeof(char *) * HEIGTH);
 	for (; i < HEIGTH; i++)
 	{
@@ -48,7 +48,7 @@ int main()
 
 	printf("%d player wins!", gameOver);
 
-	//hafizayi geri býrak
+	//hafizayi geri bÃ½rak
 	for (i = 0; i < 5; i++)
 	{
 		free(arr[i]);
@@ -58,7 +58,7 @@ int main()
 	return 0;
 }
 
-//kullanýcýlarýn ikisinin de sah tasý mevcut mu
+//kullanÃ½cÃ½larÃ½n ikisinin de sah tasÃ½ mevcut mu
 //eger oyleyse return 0
 //eger 0. oyuncunun tasi yoksa 1 dondur
 //eger 1. oyuncunun tasi yoksa 2 dondur
@@ -142,7 +142,7 @@ int pawnMove(char **arr, int sRow, int sCol, int eRow, int eCol, int direction)
 			return 1;
 		}
 	}
-	//hareket capraz ise hedef alan bos olmamalý
+	//hareket capraz ise hedef alan bos olmamalÃ½
 	else if (eRow == sRow + direction && ((sCol == eCol + 1) || (sCol == eCol - 1)))
 	{
 		if (arr[eRow][eCol] != ' ')
@@ -150,14 +150,14 @@ int pawnMove(char **arr, int sRow, int sCol, int eRow, int eCol, int direction)
 			return 1;
 		}
 	}
-	//buraya ulastýysa yukaridaki returnlere ulasamamistir o yuzden 0 dondur
+	//buraya ulastÃ½ysa yukaridaki returnlere ulasamamistir o yuzden 0 dondur
 	return 0;
 }
 
-//tasýn cinsine göre her tasi kontrol et fonksiyonlarýný yaz
-//destinationCheck fonksiyonu yukarýda yazýlmýs ve hedef olarak gideceginiz
-//noktadaki tasin kimin olduðuna bakar. Eðer sýranýn kendindeki oyuncunun tasý
-//ise 0 dondurur. Deðilse 1 dondurur. Boylece hem hareket fonksyionunda
+//tasÃ½n cinsine gÃ¶re her tasi kontrol et fonksiyonlarÃ½nÃ½ yaz
+//destinationCheck fonksiyonu yukarÃ½da yazÃ½lmÃ½s ve hedef olarak gideceginiz
+//noktadaki tasin kimin olduÃ°una bakar. EÃ°er sÃ½ranÃ½n kendindeki oyuncunun tasÃ½
+//ise 0 dondurur. DeÃ°ilse 1 dondurur. Boylece hem hareket fonksyionunda
 //gelen deger 1 hem de destinationCheck fonksiyonundan donen deger 1 ise
 //canMove fonksiyonu 1 dondurur. && ile bu durum kontrol edilebilir
 int canMove(char **arr, int turn, int sRow, int sCol, int eRow, int eCol)
@@ -199,7 +199,7 @@ int canMove(char **arr, int turn, int sRow, int sCol, int eRow, int eCol)
 			return 0;
 		}
 	}
-	//buradan sonrasý her tas icin fonksiyon yazacaksýnýz
+	//buradan sonrasÃ½ her tas icin fonksiyon yazacaksÃ½nÃ½z
 	//fil hareketi icin yaz
 	else if (piece == 'F' || piece == 'f')
 	{
@@ -784,8 +784,8 @@ int canMove(char **arr, int turn, int sRow, int sCol, int eRow, int eCol)
 			return 0;
 		}
 	}
-	//yukarýdaki kodlar yazýldýðýnda buraya ulasamaz ama su anki halinde warning almamak icin yazýldý.
-	//Tum kodu yazýnca silebilirsiniz.
+	//yukarÃ½daki kodlar yazÃ½ldÃ½Ã°Ã½nda buraya ulasamaz ama su anki halinde warning almamak icin yazÃ½ldÃ½.
+	//Tum kodu yazÃ½nca silebilirsiniz.
 	return 0;
 
 }
@@ -813,7 +813,7 @@ void play(char **arr, int *turn)
 			)
 		{
 			char piece = arr[sRow][sCol];
-			//secilen tas sýrasý gelen kullanýcýnýn mý
+			//secilen tas sÃ½rasÃ½ gelen kullanÃ½cÃ½nÃ½n mÃ½
 			if (
 				(*turn == 0 && (piece >= 'A' && piece <= 'Z'))
 				||
@@ -850,19 +850,19 @@ void play(char **arr, int *turn)
 				}
 
 			}
-			//secilen tas kullanýcýnýn degil
+			//secilen tas kullanÃ½cÃ½nÃ½n degil
 			else
 			{
 				printf("It's your opponent's piece\n");
 			}
 		}
-		//istenen konumlar aralýkta girilmemis
+		//istenen konumlar aralÃ½kta girilmemis
 		else
 		{
 			printf("Your move is out of boundary\n");
 		}
-	} while (1);//dogru hareket yapýlana kadar devam eder. Dogru hareket yapýldýysa
-			  //yukarýdaki break bu while kosulunu kýrar ve cýkýlýr.
+	} while (1);//dogru hareket yapÃ½lana kadar devam eder. Dogru hareket yapÃ½ldÃ½ysa
+			  //yukarÃ½daki break bu while kosulunu kÃ½rar ve cÃ½kÃ½lÃ½r.
 }
 //dizi iceriklerini ekrana yaz.
 //her bir tas bir karenin icine girsin diye
@@ -870,8 +870,8 @@ void play(char **arr, int *turn)
 void printScreen(char ** arr, int nRows, int nCols)
 {
 
-	//ekraný her seferinde silip tekrar yazmak isterseniz.
-	//aþagýdaki komutu aciniz
+	//ekranÃ½ her seferinde silip tekrar yazmak isterseniz.
+	//aÃ¾agÃ½daki komutu aciniz
 	system("@cls||clear");
 
 	int i, j;
